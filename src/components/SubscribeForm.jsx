@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 const VENMO_QR = '/venmo-qr.png';
 
@@ -7,6 +8,7 @@ export default function SubscribeForm() {
   const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const successRef = useRef(null);
 
   useEffect(() => {
@@ -20,7 +22,35 @@ export default function SubscribeForm() {
       alert('Please fill in your name and email address to subscribe!');
       return;
     }
-    setSubmitted(true);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      alert('Email service is not configured. Please contact henryscomicshop@gmail.com directly.');
+      return;
+    }
+
+    setSending(true);
+
+    const templateParams = {
+      from_name: `${fname.trim()} ${lname.trim()}`.trim(),
+      from_email: email.trim(),
+      to_email: import.meta.env.VITE_RECIPIENT_EMAIL || 'henryscomicshop@gmail.com',
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, { publicKey })
+      .then(() => {
+        setSubmitted(true);
+        setSending(false);
+      })
+      .catch((error) => {
+        console.error('EmailJS error:', error);
+        setSending(false);
+        alert('Oops! Something went wrong sending your info. Please try again or email henryscomicshop@gmail.com directly.');
+      });
   }
 
   return (
@@ -88,8 +118,8 @@ export default function SubscribeForm() {
       </div>
 
       <div className="submit-row">
-        <button className="btn-submit" onClick={handleSubmit} disabled={submitted}>
-          {submitted ? '✓ Subscribed!' : 'BAM! Subscribe →'}
+        <button className="btn-submit" onClick={handleSubmit} disabled={submitted || sending}>
+          {submitted ? '✓ Subscribed!' : sending ? 'Sending…' : 'BAM! Subscribe →'}
         </button>
         <span className="secure-note">
           After signing up, Venmo <strong style={{ color: 'var(--yellow)' }}>$20</strong> to <strong style={{ color: 'var(--yellow)' }}>@Phil-Ernst-3</strong><br />
