@@ -63,6 +63,7 @@ export default function SubscribeForm() {
           { num: '1️⃣', label: 'Fill out the form', sub: 'Tell Henry your email' },
           { num: '2️⃣', label: 'Venmo $20/month', sub: '@Phil-Ernst-3' },
           { num: '3️⃣', label: 'Get your comics!', sub: '1 comic emailed every week' },
+          { num: '4️⃣', label: 'Renew monthly', sub: 'Henry will send a reminder' },
         ].map((step) => (
           <div key={step.num} style={{ background: 'rgba(255,225,53,0.1)', border: '2px solid rgba(255,225,53,0.3)', borderRadius: '10px', padding: '1rem', textAlign: 'center' }}>
             <div style={{ fontSize: '1.6rem', marginBottom: '4px' }}>{step.num}</div>
@@ -92,6 +93,7 @@ export default function SubscribeForm() {
               '✅ 1 brand-new comic emailed to you every week',
               '✅ 4 comics per month total',
               '✅ $20/month — paid by Venmo',
+              '✅ Henry sends a Venmo request at the start of each month',
               '✅ Cancel anytime by emailing Henry',
             ].map((item) => (
               <li key={item} style={{ fontSize: '0.92rem', fontWeight: 700, color: 'rgba(255,255,255,0.85)' }}>{item}</li>
@@ -130,7 +132,7 @@ export default function SubscribeForm() {
       {submitted && (
         <div className="success-msg" ref={successRef}>
           <h3>🎉 KAPOW! You&apos;re In!</h3>
-          <p>Thanks for signing up! Now Venmo <strong>$20 to @Phil-Ernst-3</strong> and your first comic will land in your inbox this week. Watch your email!</p>
+          <p>Thanks for signing up! Now Venmo <strong>$20 to @Phil-Ernst-3</strong> and your first comic will land in your inbox this week. Each month, Henry will send you a Venmo request to renew — just approve it to keep the comics coming! Watch your email!</p>
         </div>
       )}
     </section>
