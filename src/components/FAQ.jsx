@@ -25,14 +25,21 @@ const faqs = [
 
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false);
+  const answerId = `faq-answer-${q.replace(/\s+/g, '-').toLowerCase()}`;
 
   return (
     <div className={`faq-item${open ? ' open' : ''}`}>
-      <div className="faq-question" onClick={() => setOpen(!open)}>
+      <button
+        className="faq-question"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={answerId}
+        type="button"
+      >
         {q}
         <span className="faq-arrow">▼</span>
-      </div>
-      <div className="faq-answer">{a}</div>
+      </button>
+      <div className="faq-answer" id={answerId} role="region">{a}</div>
     </div>
   );
 }

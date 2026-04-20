@@ -1,12 +1,19 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-const VENMO_QR = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABfklEQVR4nO2YQWrlQAxEn78asmzf4B9F/wa5cvsoOcCAvJepWbSdH4YMhFlktIgwuG1tinJJJXkRn8dx+0sCfjKAAsDCs0saFg6AZwlsLsk0Eld44iYpKmC7AcvyAF5iO9btJWBf2jcj+Dzaed8f3LXAcY/2vQi+kkk2C7f4fwj+jAYIGtjbyj2ONehir4DtWafvF1ClTmcE4KZh57NKYAtX+ATGRWONHoLCTSP7uAibJlYEGwBd2Qf9wleEN43syq6EnPILsghvUgK4BdKYFpa9Ri1onHoLLLBCersB7I+Gt67EgQSLKr3XNKSR+DzMaaQAb1Nj5wGYzaSK3gL6WQ4TFVSq07OzDboUmGRV+ptMQ5IFT/aK8BYkPj/rU3tleJteMBeZuTVUwRZwzW/npBRU0duHPcumZ4WX6SF+mmlAH/NljVq4Ml3LyrRUSfRRwLPeM5tpHCvHCmxtfxTA9tyzjsXH22q/Xo9GtipeD0y9WWABFKmF5ecf1z9lfgNjalksRaFlPgAAAABJRU5ErkJggg==';
+const VENMO_QR = '/venmo-qr.png';
 
 export default function SubscribeForm() {
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const successRef = useRef(null);
+
+  useEffect(() => {
+    if (submitted && successRef.current) {
+      successRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [submitted]);
 
   function handleSubmit() {
     if (!fname.trim() || !email.trim()) {
@@ -14,9 +21,6 @@ export default function SubscribeForm() {
       return;
     }
     setSubmitted(true);
-    setTimeout(() => {
-      document.getElementById('success-msg')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 50);
   }
 
   return (
@@ -94,7 +98,7 @@ export default function SubscribeForm() {
       </div>
 
       {submitted && (
-        <div className="success-msg" id="success-msg">
+        <div className="success-msg" ref={successRef}>
           <h3>🎉 KAPOW! You&apos;re In!</h3>
           <p>Thanks for signing up! Now Venmo <strong>$20 to @Phil-Ernst-3</strong> and your first comic will land in your inbox this week. Watch your email!</p>
         </div>
