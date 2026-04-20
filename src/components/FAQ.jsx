@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: 'How exactly does payment work?',
-    a: 'After signing up, Venmo $20 to @Phil-Ernst-3. That covers 4 comics for the month. At the start of each new month, send another $20 to keep your comics coming!',
+    a: 'After signing up, Venmo $20 to @Phil-Ernst-3. That covers 4 comics for the month. At the start of each new month, Henry will send you a Venmo request for $20 — just approve it to keep your comics coming! No need to remember to send payment yourself.',
   },
   {
     q: 'How will I receive my comic each week?',
