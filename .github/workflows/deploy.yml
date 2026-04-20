@@ -37,9 +37,9 @@ jobs:
           VITE_RECIPIENT_EMAIL: ${{ secrets.VITE_RECIPIENT_EMAIL }}
         run: |
           missing=()
-          [ -z "$VITE_EMAILJS_SERVICE_ID" ]  && missing+=(VITE_EMAILJS_SERVICE_ID)
-          [ -z "$VITE_EMAILJS_TEMPLATE_ID" ] && missing+=(VITE_EMAILJS_TEMPLATE_ID)
-          [ -z "$VITE_EMAILJS_PUBLIC_KEY" ]  && missing+=(VITE_EMAILJS_PUBLIC_KEY)
+          [ -z "$VITE_EMAILJS_SERVICE_ID" ]  && missing+=(VITE_EMAILJS_SERVICE_ID) || true
+          [ -z "$VITE_EMAILJS_TEMPLATE_ID" ] && missing+=(VITE_EMAILJS_TEMPLATE_ID) || true
+          [ -z "$VITE_EMAILJS_PUBLIC_KEY" ]  && missing+=(VITE_EMAILJS_PUBLIC_KEY) || true
           if [ ${#missing[@]} -gt 0 ]; then
             echo "::error::Missing required secrets: ${missing[*]}"
             exit 1
