@@ -643,29 +643,3 @@ footer strong { color: var(--yellow); }
   .henry-avatar { margin: 0 auto; }
   .pow-badge { display: none; }
 }
-
-/* AD SLOTS */
-.ad-slot {
-  display: block;
-  width: 100%;
-  max-width: 970px;
-  margin: 1.5rem auto;
-  padding: 0 1rem;
-  text-align: center;
-  min-height: 120px;
-}
-.ad-slot__label {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(26, 26, 46, 0.5);
-  margin-bottom: 0.4rem;
-}
-.ad-slot .adsbygoogle {
-  min-height: 100px;
-}
-@media (min-width: 768px) {
-  .ad-slot { min-height: 280px; }
-  .ad-slot .adsbygoogle { min-height: 250px; }
-}

@@ -35,13 +35,6 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
           VITE_RECIPIENT_EMAIL: ${{ secrets.VITE_RECIPIENT_EMAIL }}
-          VITE_ADSENSE_CLIENT: ${{ secrets.VITE_ADSENSE_CLIENT }}
-          VITE_ADSENSE_SLOT_TOP: ${{ secrets.VITE_ADSENSE_SLOT_TOP }}
-          VITE_ADSENSE_SLOT_POST_HERO: ${{ secrets.VITE_ADSENSE_SLOT_POST_HERO }}
-          VITE_ADSENSE_SLOT_MID1: ${{ secrets.VITE_ADSENSE_SLOT_MID1 }}
-          VITE_ADSENSE_SLOT_MID2: ${{ secrets.VITE_ADSENSE_SLOT_MID2 }}
-          VITE_ADSENSE_SLOT_MID3: ${{ secrets.VITE_ADSENSE_SLOT_MID3 }}
-          VITE_ADSENSE_SLOT_FOOTER: ${{ secrets.VITE_ADSENSE_SLOT_FOOTER }}
         run: |
           missing=()
           [ -z "$VITE_EMAILJS_SERVICE_ID" ]  && missing+=(VITE_EMAILJS_SERVICE_ID) || true
@@ -55,14 +48,6 @@ jobs:
           printf 'VITE_EMAILJS_TEMPLATE_ID=%s\n' "$VITE_EMAILJS_TEMPLATE_ID" >> .env
           printf 'VITE_EMAILJS_PUBLIC_KEY=%s\n'  "$VITE_EMAILJS_PUBLIC_KEY"  >> .env
           [ -n "$VITE_RECIPIENT_EMAIL" ] && printf 'VITE_RECIPIENT_EMAIL=%s\n' "$VITE_RECIPIENT_EMAIL" >> .env || true
-          # AdSense vars are optional — leave VITE_ADSENSE_CLIENT unset to disable ads.
-          [ -n "$VITE_ADSENSE_CLIENT" ]         && printf 'VITE_ADSENSE_CLIENT=%s\n'         "$VITE_ADSENSE_CLIENT"         >> .env || true
-          [ -n "$VITE_ADSENSE_SLOT_TOP" ]       && printf 'VITE_ADSENSE_SLOT_TOP=%s\n'       "$VITE_ADSENSE_SLOT_TOP"       >> .env || true
-          [ -n "$VITE_ADSENSE_SLOT_POST_HERO" ] && printf 'VITE_ADSENSE_SLOT_POST_HERO=%s\n' "$VITE_ADSENSE_SLOT_POST_HERO" >> .env || true
-          [ -n "$VITE_ADSENSE_SLOT_MID1" ]      && printf 'VITE_ADSENSE_SLOT_MID1=%s\n'      "$VITE_ADSENSE_SLOT_MID1"      >> .env || true
-          [ -n "$VITE_ADSENSE_SLOT_MID2" ]      && printf 'VITE_ADSENSE_SLOT_MID2=%s\n'      "$VITE_ADSENSE_SLOT_MID2"      >> .env || true
-          [ -n "$VITE_ADSENSE_SLOT_MID3" ]      && printf 'VITE_ADSENSE_SLOT_MID3=%s\n'      "$VITE_ADSENSE_SLOT_MID3"      >> .env || true
-          [ -n "$VITE_ADSENSE_SLOT_FOOTER" ]    && printf 'VITE_ADSENSE_SLOT_FOOTER=%s\n'    "$VITE_ADSENSE_SLOT_FOOTER"    >> .env || true
 
       - name: Install dependencies
         run: npm ci
