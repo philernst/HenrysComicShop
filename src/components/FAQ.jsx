@@ -3,7 +3,7 @@ import { useState } from 'react';
 const faqs = [
   {
     q: 'How does the subscription work?',
-    a: "It's simple! Fill out the sign-up form with your email address, then Venmo $20 to @Phil-Ernst-3. Once Henry sees your payment, he'll start sending you 1 new comic every week — straight to your inbox!",
+    a: "It's simple! Fill out the sign-up form with your email address, then Venmo $10 to @Phil-Ernst-3. Once Henry sees your payment, he'll start sending you 1 new comic every week — straight to your inbox!",
   },
   {
     q: 'Can I cancel my subscription?',
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: 'How exactly does payment work?',
-    a: 'After signing up, Venmo $20 to @Phil-Ernst-3. That covers 4 comics for the month. At the start of each new month, Henry will send you a Venmo request for $20 — just approve it to keep your comics coming! No need to remember to send payment yourself.',
+    a: 'After signing up, Venmo $10 to @Phil-Ernst-3. That covers 4 comics for the month. At the start of each new month, Henry will send you a Venmo request for $10 — just approve it to keep your comics coming! No need to remember to send payment yourself.',
   },
   {
     q: 'How will I receive my comic each week?',
