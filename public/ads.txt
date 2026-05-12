@@ -1,3 +1,2 @@
-# Replace pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID.
 # Required by programmatic ad buyers — without it CPMs drop significantly.
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-6482725806427470, DIRECT, f08c47fec0942fa0
