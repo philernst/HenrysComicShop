@@ -3,19 +3,19 @@ export default function Hero() {
     <section className="hero" id="home">
       <div className="hero-grid">
         <div>
-          <h2>1 New Comic Every Week — Sent to Your Email!</h2>
+          <h2>A Whole Vault of Comics — Free to Read!</h2>
           <p>
-            Hi! I&apos;m Henry and I make awesome comic books. Subscribe and get a
-            brand-new comic emailed to you every single week — 4 comics a month
-            for just $10!
+            Hi! I&apos;m Henry and I make awesome comic books. Pick any cover
+            below to crack open the story — superheroes, space pirates, talking
+            sharks, the works. New ones drop all the time, so come back often!
           </p>
-          <a href="#subscribe" className="btn-main">🚀 Subscribe Now!</a>
+          <a href="#comics" className="btn-main">📚 Browse the Comics</a>
         </div>
         <div className="price-badge">
-          <span className="price-amount">$10</span>
-          <span className="price-label">per month</span>
+          <span className="price-amount">FREE</span>
+          <span className="price-label">all comics</span>
           <div style={{ marginTop: '6px', fontSize: '0.78rem', fontWeight: 900, color: 'var(--dark)', background: 'rgba(0,0,0,0.1)', borderRadius: '6px', padding: '3px 6px' }}>
-            4 comics / month
+            no sign-up
           </div>
         </div>
       </div>

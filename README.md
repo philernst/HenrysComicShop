@@ -1,20 +1,19 @@
-# React + Vite
+# Henry's Comic Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A free, ad-supported gallery of comics by Henry, built with React + Vite.
+
+## Adding or editing comics
+
+The comic library lives in `src/data/comics.js` — one entry per comic with `title`, `issue`, `blurb`, `icon` (emoji used on the generated cover), `palette` (cover colors), `pages`, and `pdf` (path to the PDF in `public/`). Drop a new PDF into `public/comics/` and point `pdf` at it, e.g. `pdf: '/comics/my-new-comic.pdf'`. Covers are generated from `icon` + `palette`, so no image file is required.
 
 ## Advertising (Google AdSense)
 
 The AdSense loader is in `index.html` and `public/ads.txt` carries the publisher ID. Ad placements are handled entirely by **Auto Ads** in the [AdSense dashboard](https://www.google.com/adsense/) — no per-slot configuration in the codebase. To change ad behavior (formats, density, anchor/vignette overlays), edit settings in AdSense, not the code.
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `npm run dev` — start the Vite dev server
+- `npm run build` — production build
+- `npm run lint` — ESLint
+- `npm run preview` — preview the production build
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
