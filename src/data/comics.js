@@ -63,6 +63,30 @@ const comics = [
     creatorsNote: 'I wanted this one to have a twist! Issue #4 is coming soon. \u2014 Henry',
   },
   {
+    id: 'dude-and-the-nudle-bole-1',
+    title: 'Dude and the Nudle Bole',
+    issue: 'Book 1',
+    blurb: 'Alex, Coby, and Cory step up to the Competadder \u2014 and whoever gets this book is officially the best.',
+    icon: '🏆',
+    palette: { bg: '#0057A8', accent: '#FFE135' },
+    image: '/comics/dude-and-the-nudle-bole-1.png',
+    pages: [
+      '/comics/dude-and-the-nudle-bole-1-page-1.png',
+      '/comics/dude-and-the-nudle-bole-1-page-2.png',
+      '/comics/dude-and-the-nudle-bole-1-page-3.png',
+    ],
+    synopsis: [
+      'Book 1 opens on the cover itself: three friends \u2014 Alex, Coby, and Cory \u2014 lined up and ready to take on the Competadder, the toothy trophy that decides who is truly the best.',
+      'P.S. Whoever gets this is the best. P.S.S. It is a very good book.',
+    ],
+    characters: [
+      { name: 'Alex', desc: 'Backwards cap, big grin, always game.' },
+      { name: 'Coby', desc: 'Spiky hair, shades on, ready for anything.' },
+      { name: 'Cory', desc: 'Cool, calm, and also wearing sunglasses.' },
+    ],
+    creatorsNote: 'This is the very first book in the Dude and the Nudle Bole series. \u2014 Henry',
+  },
+  {
     id: 'rocket-rex',
     title: 'Rocket Rex vs. The Moon Pirates',
     issue: '#1',
