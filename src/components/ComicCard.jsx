@@ -1,5 +1,5 @@
 export default function ComicCard({ comic }) {
-  const { id, title, issue, blurb, icon, palette, pages } = comic;
+  const { id, title, issue, blurb, icon, palette } = comic;
 
   return (
     <a
@@ -10,7 +10,6 @@ export default function ComicCard({ comic }) {
       <div className="comic-cover">
         <span className="comic-issue">{issue}</span>
         <span className="comic-icon" aria-hidden="true">{icon}</span>
-        <span className="comic-pages">{pages} pages</span>
       </div>
       <div className="comic-meta">
         <h3>{title}</h3>

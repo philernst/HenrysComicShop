@@ -42,7 +42,6 @@ export default function ComicPage({ id }) {
         <div className="comic-page-cover">
           <span className="comic-issue">{comic.issue}</span>
           <span className="comic-icon" aria-hidden="true">{comic.icon}</span>
-          <span className="comic-pages">{comic.pages} pages</span>
         </div>
         <div className="comic-page-title">
           <h2>{comic.title}</h2>
