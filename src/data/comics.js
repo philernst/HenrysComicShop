@@ -10,7 +10,6 @@ const comics = [
     blurb: 'Deep in a forgotten cavern, a kid finds a dragon egg \u2014 and accidentally becomes its first friend.',
     icon: '🥚',
     palette: { bg: '#E8192C', accent: '#FFE135' },
-    pages: 1,
     image: '/comics/dragon-series-1.png',
     synopsis: [
       'Deep in a forgotten cavern, our hero stumbles on something nobody has seen in a very long time: a real dragon egg. He can\u2019t just leave it there.',
@@ -30,7 +29,6 @@ const comics = [
     blurb: 'The hero takes his first shot at the dragon \u2014 and quickly realizes he needs backup. A whole army of it.',
     icon: '🐉',
     palette: { bg: '#00C853', accent: '#FFE135' },
-    pages: 1,
     image: '/comics/dragon-series-2.png',
     synopsis: [
       'Our hero spots the dragon perched on a tree and lets an arrow fly. Bad idea. The dragon answers with a wall of flame and the hero only barely escapes \u2014 "utt uooh" indeed.',
@@ -51,7 +49,6 @@ const comics = [
     blurb: 'The army arrives ready to fight \u2014 but a moment of mercy uncovers a much bigger problem flying in from the sky.',
     icon: '🐲',
     palette: { bg: '#7B2FBE', accent: '#FFE135' },
-    pages: 1,
     image: '/comics/dragon-series-3.png',
     synopsis: [
       '"We are ready!!" The army shows up swords-up, ready to take down the captured dragon. But the hero hesitates: do they really need to fight?',
@@ -72,7 +69,6 @@ const comics = [
     blurb: 'A jet-powered T-Rex defends the lunar colony from a crew of cheese-stealing space buccaneers.',
     icon: '🦖',
     palette: { bg: '#0057A8', accent: '#FFE135' },
-    pages: 12,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'When Rocket Rex bolted twin ion engines onto his tail, he never expected to be the lunar colony\u2019s last line of defense. But after the Moon Pirates start siphoning cheese reserves from Crater Town, somebody has to roar.',
@@ -93,7 +89,6 @@ const comics = [
     blurb: 'A camp-fire treat gains super strength after being toasted by lightning. Crime is now... toasted.',
     icon: '⚡',
     palette: { bg: '#FF6B35', accent: '#1A1A2E' },
-    pages: 10,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'It was just supposed to be s\u2019mores night. But when lightning strikes a marshmallow mid-toast, an unlikely hero rises from the embers \u2014 squishy, slightly burnt, and absolutely furious about littering.',
@@ -112,7 +107,6 @@ const comics = [
     blurb: 'The city\u2019s sharpest tabby cracks the case of the missing tuna sandwich.',
     icon: '🐱',
     palette: { bg: '#7B2FBE', accent: '#FFE135' },
-    pages: 14,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'Whiskers has solved cases involving disappearing yarn balls, suspiciously moved couches, and one very rude vacuum. But this time, the stakes are personal: somebody ate his tuna sandwich.',
@@ -132,7 +126,6 @@ const comics = [
     blurb: 'He\u2019s slow. He\u2019s steady. He\u2019s also somehow the fastest racer in the galaxy.',
     icon: '🐢',
     palette: { bg: '#00C853', accent: '#1A1A2E' },
-    pages: 8,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'Nobody expected Turbo to win the Galactic Grand Prix. He didn\u2019t even expect it. But when his shell turns out to be the most aerodynamic object in three star systems, history is made.',
@@ -151,7 +144,6 @@ const comics = [
     blurb: 'Three astronauts deliver hot pies across a hostile solar system. Toppings cost extra.',
     icon: '🍕',
     palette: { bg: '#E8192C', accent: '#FFE135' },
-    pages: 16,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'The Patrol\u2019s next delivery is a 12-cheese mega-pie to a customer on the rings of Saturn. Easy enough \u2014 unless the asteroid belt is hungry, which it absolutely is.',
@@ -171,7 +163,6 @@ const comics = [
     blurb: 'By day a normal park squirrel. By night, the acorn-flinging vigilante the city deserves.',
     icon: '🌰',
     palette: { bg: '#1A1A2E', accent: '#FF6B35' },
-    pages: 11,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'Park Town has a problem: somebody has been stealing the good acorns. By day, our hero is just a regular bushy-tailed squirrel. By night, he is the masked menace criminals fear most.',
@@ -190,7 +181,6 @@ const comics = [
     blurb: 'Sweet old lady. Titanium hip. Built-in cookie cannon. You do the math.',
     icon: '🤖',
     palette: { bg: '#FFE135', accent: '#E8192C' },
-    pages: 12,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'After her bionic upgrades go a little too well, Grandma is now defending the neighborhood from porch pirates, lawn invaders, and one very rude door-to-door vacuum salesman.',
@@ -209,7 +199,6 @@ const comics = [
     blurb: 'Four kids, one talking hammerhead, and a science fair entry that may end the world.',
     icon: '🦈',
     palette: { bg: '#0057A8', accent: '#00C853' },
-    pages: 18,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'When four classmates accidentally teach a hammerhead shark to talk, they form the most exclusive club at school. The problem: their science fair project is starting to grow legs. Literally.',
@@ -230,7 +219,6 @@ const comics = [
     blurb: 'It does sick kickflips. It also screams. Owner: still undecided.',
     icon: '👻',
     palette: { bg: '#7B2FBE', accent: '#FFFEF0' },
-    pages: 9,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'In issue #2, our young hero learns that the ghost in the skateboard has a name, a tragic backstory, and very strong feelings about goofy stance.',
@@ -249,7 +237,6 @@ const comics = [
     blurb: 'The morning commute is on time, on fire, and occasionally airborne.',
     icon: '🐲',
     palette: { bg: '#FF6B35', accent: '#FFE135' },
-    pages: 10,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'Route 9 used to be just another school bus run. Then the city budget got weird and they replaced the bus with a dragon. Ridership has tripled.',
@@ -268,7 +255,6 @@ const comics = [
     blurb: 'In zero gravity, nobody can hear you steal the pudding cup.',
     icon: '🚀',
     palette: { bg: '#1A1A2E', accent: '#FFE135' },
-    pages: 13,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'The space station cafeteria has rules. Issue #3 is about what happens when everyone breaks them at the same time.',
@@ -287,7 +273,6 @@ const comics = [
     blurb: 'Magic school dismissed early. The playground will never be the same.',
     icon: '🪄',
     palette: { bg: '#00C853', accent: '#1A1A2E' },
-    pages: 15,
     pdf: '/sample-comic.pdf',
     synopsis: [
       'It\u2019s the first day of recess at the Academy of Definitely Real Magic. The teachers are inside. The kids are outside. The swings are now sentient.',

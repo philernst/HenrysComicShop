@@ -394,20 +394,6 @@ main {
   box-shadow: 2px 2px 0 var(--dark);
 }
 
-.comic-pages {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.65);
-  color: var(--white);
-  font-size: 0.75rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 3px 8px;
-  border-radius: 6px;
-}
-
 .comic-meta {
   padding: 1rem 1.1rem 1.2rem;
   display: flex;
