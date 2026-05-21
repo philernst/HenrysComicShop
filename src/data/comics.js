@@ -350,6 +350,32 @@ const comics = [
     creatorsNote: 'I spelled \u201cpursuit\u201d as \u201cpersute\u201d on purpose. It\u2019s cooler that way. \u2014 Henry',
   },
   {
+    id: 'the-extra-special-comic',
+    title: 'The Extra Special Comic',
+    issue: 'One-Shot',
+    blurb: 'A two-sided mega-issue: car chases, dream sequences, lightsaber duels on the front \u2014 and a full-on naval battle on the back side.',
+    icon: '⭐',
+    palette: { bg: '#FFE135', accent: '#FF6B35' },
+    image: '/comics/the-extra-special-comic.png',
+    pages: [
+      '/comics/the-extra-special-comic-page-1.png',
+      '/comics/the-extra-special-comic-page-2.png',
+    ],
+    synopsis: [
+      'Front side: \u201cI\u2019ll get you back!\u201d A red car chases a blue car through stop signs. Meanwhile, lightsaber duels rage in the grass \u2014 \u201cArgggg!\u201d \u201cThat was close, oh no!\u201d \u2014 and a hero wakes up: \u201cAh, that was just a dream.\u201d Then prison cells, \u201cgot ya!\u201d, \u201cha!\u201d, a reunion (\u201cI have been looking for you!\u201d \u201cI did not no!\u201d), a ship setting sail (\u201cLet\u2019s go!\u201d), a landing (\u201cWe\u2019re here!\u201d \u201cWe made it!\u201d clap clap), and one last dungeon escape (\u201cOh!\u201d \u201cAyyy!\u201d \u201cI lost my weapon!\u201d \u201cToo late!\u201d).',
+      'BACK SIDE: \u201cWater!\u201d The ships clash in the open sea \u2014 boom, boom \u2014 cannons, sails on fire, \u201chelp!\u201d someone yells from a sinking deck. \u201cYou take it!\u201d \u201cDuck!\u201d \u201cOh no!\u201d \u201cChomp!\u201d a sea monster shows up. Below the waves: \u201cgloop\u201d, \u201cglurp\u201d, \u201cggrrr!\u201d. Then prisoners in cells, a happy family portrait, and the headline: \u201cDaily News \u2014 We won!\u201d Final word: \u201che left the door open!\u201d',
+    ],
+    characters: [
+      { name: 'The Red Car Driver', desc: '\u201cI\u2019ll get you back!\u201d Has unfinished business.' },
+      { name: 'The Dreamer', desc: 'Wakes up relieved. It was just a dream. (Probably.)' },
+      { name: 'Ship Captains', desc: 'Both sides shouting orders as the cannons fly.' },
+      { name: 'Sea Monster', desc: 'Chomp.' },
+      { name: 'The Reunited Friends', desc: '\u201cI have been looking for you!\u201d / \u201cI did not no!\u201d' },
+      { name: 'The Daily News Team', desc: 'Reports the win. Notes that someone left the door open.' },
+    ],
+    creatorsNote: 'This one is the EXTRA special comic because it has a back side. Make sure you read both! \u2014 Henry',
+  },
+  {
     id: 'rocket-rex',
     title: 'Rocket Rex vs. The Moon Pirates',
     issue: '#1',
