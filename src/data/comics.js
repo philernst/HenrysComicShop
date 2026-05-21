@@ -239,6 +239,26 @@ const comics = [
     creatorsNote: 'There will be a Greg spin-off someday. \u2014 Henry',
   },
   {
+    id: 'dragon-series-1',
+    title: 'The Dragon Series',
+    issue: '#1',
+    blurb: 'Deep in a forgotten cavern, a kid finds a dragon egg \u2014 and accidentally becomes its first friend.',
+    icon: '🥚',
+    palette: { bg: '#E8192C', accent: '#FFE135' },
+    pages: 1,
+    image: '/comics/dragon-series-1.png',
+    synopsis: [
+      'Deep in a forgotten cavern, our hero stumbles on something nobody has seen in a very long time: a real dragon egg. He can\u2019t just leave it there.',
+      'He carries it home, and against all odds the egg hatches. The little dragon is fussy at first \u2014 "it haches" \u2014 but a steady supply of snacks turns him into a friend.',
+      'The dragon grows. And grows. And grows. Eventually he\u2019s too big for the backyard, and the kid does the hardest thing: lets him go. "Go. Be free." What happens next sets up the whole series \u2014 will the dragon stay friendly, or rebel?',
+    ],
+    characters: [
+      { name: 'The Kid', desc: 'Cave explorer. Accidental dragon parent. Big heart.' },
+      { name: 'The Little Dragon', desc: 'Hatched hungry. Grows fast. Currently unsure about freedom.' },
+    ],
+    creatorsNote: 'This is the origin story for the whole Dragon Series. Then check out #2 and #3! \u2014 Henry',
+  },
+  {
     id: 'dragon-series-2',
     title: 'The Dragon Series',
     issue: '#2',
