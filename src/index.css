@@ -583,6 +583,15 @@ main {
   background: var(--white);
 }
 
+.reader-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: var(--white);
+  cursor: zoom-in;
+}
+
 /* ABOUT */
 .about-section {
   display: grid;
