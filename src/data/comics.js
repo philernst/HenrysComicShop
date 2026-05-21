@@ -291,3 +291,43 @@ export function getComicById(id) {
 export function getRelatedComics(id, count = 3) {
   return comics.filter((c) => c.id !== id).slice(0, count);
 }
+
+export function parseIssueNumber(issue) {
+  const n = parseInt(String(issue).replace(/[^0-9]/g, ''), 10);
+  return Number.isFinite(n) ? n : 0;
+}
+
+// Returns comics grouped by series (title) with issues sorted ascending.
+// Series themselves keep the order they first appear in `comics`,
+// so authoring order in this file controls the "featured" order.
+export function getSortedComics() {
+  const seriesOrder = [];
+  const groups = new Map();
+  for (const comic of comics) {
+    if (!groups.has(comic.title)) {
+      groups.set(comic.title, []);
+      seriesOrder.push(comic.title);
+    }
+    groups.get(comic.title).push(comic);
+  }
+  const out = [];
+  for (const title of seriesOrder) {
+    const issues = groups.get(title).slice().sort(
+      (a, b) => parseIssueNumber(a.issue) - parseIssueNumber(b.issue)
+    );
+    out.push(...issues);
+  }
+  return out;
+}
+
+export function getSeriesList() {
+  const seen = new Set();
+  const list = [];
+  for (const comic of comics) {
+    if (!seen.has(comic.title)) {
+      seen.add(comic.title);
+      list.push(comic.title);
+    }
+  }
+  return list;
+}

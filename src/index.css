@@ -274,8 +274,49 @@ main {
   font-size: 1.05rem;
   font-weight: 700;
   color: #333;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.2rem;
   max-width: 640px;
+}
+
+.series-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.series-chip {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  padding: 0.45rem 1rem;
+  background: var(--white);
+  color: var(--dark);
+  border: 3px solid var(--dark);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--dark);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s, background 0.15s, color 0.15s;
+}
+
+.series-chip:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--dark);
+}
+
+.series-chip:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--dark);
+}
+
+.series-chip.active {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+.series-chip:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
 }
 
 .comics-grid {
