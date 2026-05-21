@@ -238,6 +238,48 @@ const comics = [
     ],
     creatorsNote: 'There will be a Greg spin-off someday. \u2014 Henry',
   },
+  {
+    id: 'dragon-series-2',
+    title: 'The Dragon Series',
+    issue: '#2',
+    blurb: 'The hero takes his first shot at the dragon \u2014 and quickly realizes he needs backup. A whole army of it.',
+    icon: '🐉',
+    palette: { bg: '#00C853', accent: '#FFE135' },
+    pages: 1,
+    image: '/comics/dragon-series-2.png',
+    synopsis: [
+      'Our hero spots the dragon perched on a tree and lets an arrow fly. Bad idea. The dragon answers with a wall of flame and the hero only barely escapes \u2014 "utt uooh" indeed.',
+      'One hour later, after a little cooling down (literally), he\u2019s feeling brave again. The dragon roars back from the next hill: "yan." Translation: bring it on.',
+      'The hero comes to a serious conclusion: he can\u2019t do this alone. Time to raise an army. The final panel hints at what\u2019s coming next \u2014 will the army actually be enough to beat the dragon?',
+    ],
+    characters: [
+      { name: 'The Hero', desc: 'Brave. Slightly singed. Excellent at recruiting friends.' },
+      { name: 'The Green Dragon', desc: 'Winged, fire-breathing, deeply uninterested in arrows.' },
+      { name: 'The Army', desc: 'Recently formed. Pointy sticks. Lots of enthusiasm.' },
+    ],
+    creatorsNote: 'This is the second comic in The Dragon Series. Don\u2019t miss issue #3! \u2014 Henry',
+  },
+  {
+    id: 'dragon-series-3',
+    title: 'The Dragon Series',
+    issue: '#3',
+    blurb: 'The army arrives ready to fight \u2014 but a moment of mercy uncovers a much bigger problem flying in from the sky.',
+    icon: '🐲',
+    palette: { bg: '#7B2FBE', accent: '#FFE135' },
+    pages: 1,
+    image: '/comics/dragon-series-3.png',
+    synopsis: [
+      '"We are ready!!" The army shows up swords-up, ready to take down the captured dragon. But the hero hesitates: do they really need to fight?',
+      'In a surprising twist, the hero sets the dragon free instead. "Go, be free!" The dragon flies off, confused but grateful. A win for kindness, right?',
+      'Not quite. The dragon was guarding an egg \u2014 and a much, much bigger dragon has noticed it\u2019s gone. The final panel sets up issue #4 with a roaring question: will the dragon attack the humans?',
+    ],
+    characters: [
+      { name: 'The Hero', desc: 'Now leading an army. Still figuring out the right call.' },
+      { name: 'The Green Dragon', desc: 'Tied up at first, then freed. Very confused.' },
+      { name: 'The Big Black Dragon', desc: 'Egg parent. Furious. Recently arrived.' },
+    ],
+    creatorsNote: 'I wanted this one to have a twist! Issue #4 is coming soon. \u2014 Henry',
+  },
 ];
 
 export default comics;

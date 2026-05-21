@@ -25,6 +25,9 @@ export default function ComicPage({ id }) {
   }
 
   const related = getRelatedComics(comic.id, 3);
+  const fileUrl = comic.image || comic.pdf;
+  const isImage = Boolean(comic.image);
+  const downloadLabel = isImage ? '⬇️ Download Image' : '⬇️ Download PDF';
 
   return (
     <article className="comic-page">
@@ -46,7 +49,7 @@ export default function ComicPage({ id }) {
           <p className="comic-page-blurb">{comic.blurb}</p>
           <div className="comic-page-actions">
             <a href="#reader" className="btn-main">📖 Jump to Reader</a>
-            <a href={comic.pdf} download className="download-btn">⬇️ Download PDF</a>
+            <a href={fileUrl} download className="download-btn">{downloadLabel}</a>
           </div>
         </div>
       </header>
@@ -77,18 +80,33 @@ export default function ComicPage({ id }) {
 
       <section className="comic-section" id="reader">
         <h3 className="comic-section-title">Read It Now</h3>
-        <p className="comic-paragraph">Use the controls below to flip through every page. If the embed doesn&apos;t load on your device, you can <a href={comic.pdf} target="_blank" rel="noopener noreferrer">open the comic in a new tab</a> or download it.</p>
+        <p className="comic-paragraph">{isImage ? (
+          <>Tap or click the comic to see it full-size. You can also <a href={fileUrl} target="_blank" rel="noopener noreferrer">open it in a new tab</a> or download it.</>
+        ) : (
+          <>Use the controls below to flip through every page. If the embed doesn&apos;t load on your device, you can <a href={fileUrl} target="_blank" rel="noopener noreferrer">open the comic in a new tab</a> or download it.</>
+        )}</p>
         <div className="reader-frame-wrap">
-          <iframe
-            className="reader-frame"
-            src={`${comic.pdf}#view=FitH`}
-            title={`${comic.title} reader`}
-            loading="lazy"
-          />
+          {isImage ? (
+            <a href={fileUrl} target="_blank" rel="noopener noreferrer" aria-label={`Open ${comic.title} full size`}>
+              <img
+                className="reader-image"
+                src={fileUrl}
+                alt={`${comic.title} ${comic.issue}`}
+                loading="lazy"
+              />
+            </a>
+          ) : (
+            <iframe
+              className="reader-frame"
+              src={`${fileUrl}#view=FitH`}
+              title={`${comic.title} reader`}
+              loading="lazy"
+            />
+          )}
         </div>
         <div className="comic-page-actions" style={{ marginTop: '1rem' }}>
-          <a href={comic.pdf} target="_blank" rel="noopener noreferrer" className="btn-main">↗ Open Full Screen</a>
-          <a href={comic.pdf} download className="download-btn">⬇️ Download PDF</a>
+          <a href={fileUrl} target="_blank" rel="noopener noreferrer" className="btn-main">↗ Open Full Screen</a>
+          <a href={fileUrl} download className="download-btn">{downloadLabel}</a>
         </div>
       </section>
 
