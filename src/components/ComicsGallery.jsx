@@ -1,11 +1,7 @@
-import { useState } from 'react';
 import comics from '../data/comics';
 import ComicCard from './ComicCard';
-import ComicReader from './ComicReader';
 
 export default function ComicsGallery() {
-  const [active, setActive] = useState(null);
-
   return (
     <section id="comics">
       <h2 className="section-title">The Comic Vault</h2>
@@ -14,10 +10,9 @@ export default function ComicsGallery() {
       </p>
       <div className="comics-grid">
         {comics.map((comic) => (
-          <ComicCard key={comic.id} comic={comic} onOpen={setActive} />
+          <ComicCard key={comic.id} comic={comic} />
         ))}
       </div>
-      {active && <ComicReader comic={active} onClose={() => setActive(null)} />}
     </section>
   );
 }

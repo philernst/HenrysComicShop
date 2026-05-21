@@ -1,11 +1,10 @@
-export default function ComicCard({ comic, onOpen }) {
-  const { title, issue, blurb, icon, palette, pages } = comic;
+export default function ComicCard({ comic }) {
+  const { id, title, issue, blurb, icon, palette, pages } = comic;
 
   return (
-    <button
-      type="button"
+    <a
+      href={`#/comic/${id}`}
       className="comic-card"
-      onClick={() => onOpen(comic)}
       style={{ '--card-bg': palette.bg, '--card-accent': palette.accent }}
     >
       <div className="comic-cover">
@@ -18,6 +17,6 @@ export default function ComicCard({ comic, onOpen }) {
         <p>{blurb}</p>
         <span className="comic-read">Read &rarr;</span>
       </div>
-    </button>
+    </a>
   );
 }

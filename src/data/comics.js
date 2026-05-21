@@ -12,6 +12,17 @@ const comics = [
     palette: { bg: '#0057A8', accent: '#FFE135' },
     pages: 12,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'When Rocket Rex bolted twin ion engines onto his tail, he never expected to be the lunar colony\u2019s last line of defense. But after the Moon Pirates start siphoning cheese reserves from Crater Town, somebody has to roar.',
+      'This first issue introduces the colony, the Pirates\u2019 cheese-fueled mothership, and a heist gone delightfully wrong inside a low-gravity dairy.',
+      'Expect huge explosions, bigger punchlines, and at least one cliffhanger involving a runaway wheel of cheddar.',
+    ],
+    characters: [
+      { name: 'Rocket Rex', desc: 'A T-Rex with strap-on jet engines and a strong sense of justice.' },
+      { name: 'Captain Brie', desc: 'Leader of the Moon Pirates. Wields a cutlass made of frozen mozzarella.' },
+      { name: 'Mayor Wedge', desc: 'Crater Town\u2019s very nervous, very round mayor.' },
+    ],
+    creatorsNote: 'I drew this one after my dad let me watch a dinosaur documentary AND a pirate movie in the same day. \u2014 Henry',
   },
   {
     id: 'mighty-marshmallow',
@@ -22,6 +33,15 @@ const comics = [
     palette: { bg: '#FF6B35', accent: '#1A1A2E' },
     pages: 10,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'It was just supposed to be s\u2019mores night. But when lightning strikes a marshmallow mid-toast, an unlikely hero rises from the embers \u2014 squishy, slightly burnt, and absolutely furious about littering.',
+      'Issue #1 covers the origin story, the first showdown with the Sticky Bandit, and a touching scene where Mighty Marshmallow learns he can\u2019t hug people too hard.',
+    ],
+    characters: [
+      { name: 'Mighty Marshmallow', desc: 'Squishy. Strong. Slightly toasted. All hero.' },
+      { name: 'The Sticky Bandit', desc: 'A villain made of leftover caramel. Hates napkins.' },
+    ],
+    creatorsNote: 'I came up with this character at a camp out. \u2014 Henry',
   },
   {
     id: 'cat-detective',
@@ -32,6 +52,16 @@ const comics = [
     palette: { bg: '#7B2FBE', accent: '#FFE135' },
     pages: 14,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'Whiskers has solved cases involving disappearing yarn balls, suspiciously moved couches, and one very rude vacuum. But this time, the stakes are personal: somebody ate his tuna sandwich.',
+      'Follow Whiskers through the alleys of Meow City as he interviews witnesses, chases a suspect across three rooftops, and uncovers a conspiracy that goes all the way to the top shelf.',
+    ],
+    characters: [
+      { name: 'Whiskers', desc: 'Trench-coated tabby cat. Eats clues for breakfast.' },
+      { name: 'Detective Pug', desc: 'Whiskers\u2019 reluctant partner. Always sneezing.' },
+      { name: 'Lady Salmon', desc: 'A glamorous fish who knows more than she lets on.' },
+    ],
+    creatorsNote: 'My cat Mochi inspired this one. He really does interrogate the fridge. \u2014 Henry',
   },
   {
     id: 'turbo-turtle',
@@ -42,6 +72,15 @@ const comics = [
     palette: { bg: '#00C853', accent: '#1A1A2E' },
     pages: 8,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'Nobody expected Turbo to win the Galactic Grand Prix. He didn\u2019t even expect it. But when his shell turns out to be the most aerodynamic object in three star systems, history is made.',
+      'This origin issue follows Turbo from his quiet life in Pond Town to the chaotic finish line of the most dangerous race in the universe.',
+    ],
+    characters: [
+      { name: 'Turbo', desc: 'A turtle with a need for moderate speed.' },
+      { name: 'Zippy the Hare', desc: 'The reigning champion. Very smug. Very stretchy.' },
+    ],
+    creatorsNote: 'Sometimes slow and steady really does win. \u2014 Henry',
   },
   {
     id: 'pizza-planet',
@@ -52,6 +91,16 @@ const comics = [
     palette: { bg: '#E8192C', accent: '#FFE135' },
     pages: 16,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'The Patrol\u2019s next delivery is a 12-cheese mega-pie to a customer on the rings of Saturn. Easy enough \u2014 unless the asteroid belt is hungry, which it absolutely is.',
+      'Issue #2 features a high-speed chase through a meteor storm, a guest appearance by the legendary Calzone Captain, and the introduction of pineapple as a weapon.',
+    ],
+    characters: [
+      { name: 'Pepper', desc: 'The captain. Always on time. Always out of napkins.' },
+      { name: 'Olive', desc: 'Pilot. Can land a ship in any gravity except Earth.' },
+      { name: 'Crust', desc: 'Cook. Could put cheese on the moon if asked.' },
+    ],
+    creatorsNote: 'This is a sequel to issue #1 which I lost. Sorry! \u2014 Henry',
   },
   {
     id: 'shadow-squirrel',
@@ -62,6 +111,15 @@ const comics = [
     palette: { bg: '#1A1A2E', accent: '#FF6B35' },
     pages: 11,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'Park Town has a problem: somebody has been stealing the good acorns. By day, our hero is just a regular bushy-tailed squirrel. By night, he is the masked menace criminals fear most.',
+      'This debut issue establishes the city, the secret oak-tree HQ, and a final-page reveal that the Acorn Thief is closer than anyone thinks.',
+    ],
+    characters: [
+      { name: 'Shadow Squirrel', desc: 'Vigilante. Acrobat. Hoarder.' },
+      { name: 'Park Ranger Joe', desc: 'A friend or a foe? The mustache makes it hard to tell.' },
+    ],
+    creatorsNote: 'My favorite character to draw because of the mask. \u2014 Henry',
   },
   {
     id: 'robo-grandma',
@@ -72,6 +130,15 @@ const comics = [
     palette: { bg: '#FFE135', accent: '#E8192C' },
     pages: 12,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'After her bionic upgrades go a little too well, Grandma is now defending the neighborhood from porch pirates, lawn invaders, and one very rude door-to-door vacuum salesman.',
+      'In issue #4, Grandma faces her toughest foe yet: a knock-off Robo-Grandpa who insists his cookies are better. (They are not.)',
+    ],
+    characters: [
+      { name: 'Robo-Grandma', desc: 'Loving, lethal, currently knitting a mech suit.' },
+      { name: 'Robo-Grandpa', desc: 'Imposter. Bakes only oatmeal raisin. Cannot be trusted.' },
+    ],
+    creatorsNote: 'Dedicated to all the grandmas. \u2014 Henry',
   },
   {
     id: 'shark-tank-club',
@@ -82,6 +149,17 @@ const comics = [
     palette: { bg: '#0057A8', accent: '#00C853' },
     pages: 18,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'When four classmates accidentally teach a hammerhead shark to talk, they form the most exclusive club at school. The problem: their science fair project is starting to grow legs. Literally.',
+      'Part friendship story, part disaster movie, all jokes about cafeteria food.',
+    ],
+    characters: [
+      { name: 'Maya', desc: 'Club president. Excellent at notes.' },
+      { name: 'Jules', desc: 'Engineer. Already published in the school newsletter.' },
+      { name: 'Theo', desc: 'Lookout. Strong opinions about lunch.' },
+      { name: 'Sammi the Shark', desc: 'Hammerhead. Surprisingly polite.' },
+    ],
+    creatorsNote: 'My longest comic so far! \u2014 Henry',
   },
   {
     id: 'haunted-skateboard',
@@ -92,6 +170,15 @@ const comics = [
     palette: { bg: '#7B2FBE', accent: '#FFFEF0' },
     pages: 9,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'In issue #2, our young hero learns that the ghost in the skateboard has a name, a tragic backstory, and very strong feelings about goofy stance.',
+      'Together, they take on the local skate park\u2019s most stubborn ramp \u2014 and a rival who definitely cheats.',
+    ],
+    characters: [
+      { name: 'Ash', desc: 'Eleven. Skater. Slightly terrified of own deck.' },
+      { name: 'Phantom Phil', desc: 'The ghost. Skated in the 80s. Still has opinions.' },
+    ],
+    creatorsNote: 'My friend Ben helped with the skateboard tricks. \u2014 Henry',
   },
   {
     id: 'dragon-bus',
@@ -102,6 +189,15 @@ const comics = [
     palette: { bg: '#FF6B35', accent: '#FFE135' },
     pages: 10,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'Route 9 used to be just another school bus run. Then the city budget got weird and they replaced the bus with a dragon. Ridership has tripled.',
+      'In this first issue, meet the driver, the dragon, and the very calm kids who treat all this like it\u2019s normal.',
+    ],
+    characters: [
+      { name: 'Ms. Vela', desc: 'Driver. Tamed the dragon with one very stern look.' },
+      { name: 'Smolder', desc: 'The bus. Loud. Hot. Surprisingly polite at stop signs.' },
+    ],
+    creatorsNote: 'I would 100% ride this bus. \u2014 Henry',
   },
   {
     id: 'space-lunch',
@@ -112,6 +208,15 @@ const comics = [
     palette: { bg: '#1A1A2E', accent: '#FFE135' },
     pages: 13,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'The space station cafeteria has rules. Issue #3 is about what happens when everyone breaks them at the same time.',
+      'Floating food fights, a missing fork investigation, and a very dramatic apology pizza.',
+    ],
+    characters: [
+      { name: 'Cadet Mo', desc: 'Just wanted lunch.' },
+      { name: 'Commander Vex', desc: 'Definitely took the last juice box.' },
+    ],
+    creatorsNote: 'Drawn during a lunch break, of course. \u2014 Henry',
   },
   {
     id: 'wizard-recess',
@@ -122,7 +227,25 @@ const comics = [
     palette: { bg: '#00C853', accent: '#1A1A2E' },
     pages: 15,
     pdf: '/sample-comic.pdf',
+    synopsis: [
+      'It\u2019s the first day of recess at the Academy of Definitely Real Magic. The teachers are inside. The kids are outside. The swings are now sentient.',
+      'A chaotic, friendly first issue full of spell mishaps, an enchanted four-square ball, and the introduction of the school\u2019s strongest student: a quiet kid named Greg.',
+    ],
+    characters: [
+      { name: 'Lila', desc: 'Top of her class. Cannot stop levitating.' },
+      { name: 'Bram', desc: 'Class clown. Knows exactly two spells.' },
+      { name: 'Greg', desc: 'Quiet. Powerful. Possibly a wizard king.' },
+    ],
+    creatorsNote: 'There will be a Greg spin-off someday. \u2014 Henry',
   },
 ];
 
 export default comics;
+
+export function getComicById(id) {
+  return comics.find((c) => c.id === id);
+}
+
+export function getRelatedComics(id, count = 3) {
+  return comics.filter((c) => c.id !== id).slice(0, count);
+}
