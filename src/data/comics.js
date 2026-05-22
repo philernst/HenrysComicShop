@@ -392,7 +392,7 @@ const comics = [
   {
     id: 'the-extra-special-comic',
     title: 'The Extra Special Comic',
-    issue: 'One-Shot',
+    issue: '#1',
     blurb: 'A two-sided mega-issue: car chases, dream sequences, lightsaber duels on the front \u2014 and a full-on naval battle on the back side.',
     icon: '⭐',
     palette: { bg: '#FFE135', accent: '#FF6B35' },
