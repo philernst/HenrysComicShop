@@ -429,20 +429,6 @@ main {
 /* COMIC DETAIL PAGE */
 .comic-page { display: block; }
 
-.breadcrumb {
-  margin-bottom: 1rem;
-}
-
-.breadcrumb a {
-  font-family: 'Bangers', cursive;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  color: var(--blue);
-  text-decoration: none;
-}
-
-.breadcrumb a:hover { color: var(--red); }
-
 .comic-page-hero {
   display: grid;
   grid-template-columns: 240px 1fr;
