@@ -90,7 +90,7 @@ export default function ComicPage({ id }) {
           <h2>{comic.title}</h2>
           <p className="comic-page-blurb">{comic.blurb}</p>
           <div className="comic-page-actions">
-            <a href="#reader" className="btn-main">📖 Jump to Reader</a>
+            <a href="#comic" className="btn-main">📖 Jump to Comic</a>
             <a href={fileUrl} download className="download-btn">{downloadLabel}</a>
           </div>
         </div>
@@ -129,7 +129,7 @@ export default function ComicPage({ id }) {
         ) : (
           <>Use the controls below to flip through every page. If the embed doesn&apos;t load on your device, you can <a href={fileUrl} target="_blank" rel="noopener noreferrer">open the comic in a new tab</a> or download it.</>
         )}</p>
-        <div className="reader-frame-wrap">
+        <div className="reader-frame-wrap" id="comic">
           {pages ? (
             pages.map((src, i) => (
               <a key={src} href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open ${comic.title} page ${i + 1} full size`}>
