@@ -230,7 +230,7 @@ const comics = [
   {
     id: 'who-knows-2-5',
     title: 'Who Knows?',
-    issue: '#2½ (Middle)',
+    issue: '#2½',
     blurb: 'The in-between book. The Death Star goes BOOM, an X-wing comes in hot, and the Lava Monster almost kills Kylo Ren.',
     icon: '❓',
     palette: { bg: '#FF6B35', accent: '#1A1A2E' },
