@@ -39,28 +39,45 @@ export default function ComicPage({ id }) {
       </nav>
 
       {hasSeriesNav && (
-        <nav className="series-nav" aria-label={`${comic.title} series navigation`}>
+        <nav
+          className="series-nav-pill"
+          aria-label={`${comic.title} series navigation`}
+        >
           {prev ? (
-            <a href={`#/comic/${prev.id}`} className="series-nav-link series-nav-prev">
-              <span className="series-nav-direction">← Previous</span>
-              <span className="series-nav-issue">{prev.issue}</span>
-              <span className="series-nav-title">{prev.title}</span>
+            <a
+              href={`#/comic/${prev.id}`}
+              className="series-nav-pill-link series-nav-pill-prev"
+              aria-label={`Previous: ${prev.title} ${prev.issue}`}
+            >
+              <span className="series-nav-pill-arrow" aria-hidden="true">←</span>
+              <span className="series-nav-pill-label">
+                <span className="series-nav-pill-direction">Prev</span>
+                <span className="series-nav-pill-issue">{prev.issue}</span>
+              </span>
             </a>
           ) : (
-            <span className="series-nav-link series-nav-empty" aria-hidden="true" />
+            <span className="series-nav-pill-link series-nav-pill-empty" aria-hidden="true" />
           )}
-          <span className="series-nav-meta">
-            {comic.title}
-            {total > 1 && <small> · Issue {index + 1} of {total}</small>}
+          <span className="series-nav-pill-meta">
+            <span className="series-nav-pill-title">{comic.title}</span>
+            {total > 1 && (
+              <span className="series-nav-pill-count">Issue {index + 1} of {total}</span>
+            )}
           </span>
           {next ? (
-            <a href={`#/comic/${next.id}`} className="series-nav-link series-nav-next">
-              <span className="series-nav-direction">Next →</span>
-              <span className="series-nav-issue">{next.issue}</span>
-              <span className="series-nav-title">{next.title}</span>
+            <a
+              href={`#/comic/${next.id}`}
+              className="series-nav-pill-link series-nav-pill-next"
+              aria-label={`Next: ${next.title} ${next.issue}`}
+            >
+              <span className="series-nav-pill-label">
+                <span className="series-nav-pill-direction">Next</span>
+                <span className="series-nav-pill-issue">{next.issue}</span>
+              </span>
+              <span className="series-nav-pill-arrow" aria-hidden="true">→</span>
             </a>
           ) : (
-            <span className="series-nav-link series-nav-empty" aria-hidden="true" />
+            <span className="series-nav-pill-link series-nav-pill-empty" aria-hidden="true" />
           )}
         </nav>
       )}
