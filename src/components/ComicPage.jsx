@@ -34,10 +34,6 @@ export default function ComicPage({ id }) {
 
   return (
     <article className="comic-page">
-      <nav className="breadcrumb" aria-label="Breadcrumb">
-        <a href="#/">← The Comic Vault</a>
-      </nav>
-
       {hasSeriesNav && (
         <nav
           className="series-nav-pill"
