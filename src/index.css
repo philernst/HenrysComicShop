@@ -383,7 +383,7 @@ main {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: var(--card-accent, var(--yellow));
+  background: var(--yellow);
   color: var(--dark);
   font-family: 'Bangers', cursive;
   font-size: 1.1rem;
