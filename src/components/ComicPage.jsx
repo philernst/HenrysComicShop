@@ -90,7 +90,16 @@ export default function ComicPage({ id }) {
           <h2>{comic.title}</h2>
           <p className="comic-page-blurb">{comic.blurb}</p>
           <div className="comic-page-actions">
-            <a href="#comic" className="btn-main">📖 Jump to Comic</a>
+            <button
+              type="button"
+              className="btn-main"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('comic')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              📖 Jump to Comic
+            </button>
             <a href={fileUrl} download className="download-btn">{downloadLabel}</a>
           </div>
         </div>
