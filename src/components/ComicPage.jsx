@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { getComicById, getRelatedComics } from '../data/comics';
+import { getComicById, getRelatedComics, getSeriesNeighbors } from '../data/comics';
 import ComicCard from './ComicCard';
 
 export default function ComicPage({ id }) {
@@ -25,6 +25,8 @@ export default function ComicPage({ id }) {
   }
 
   const related = getRelatedComics(comic.id, 3);
+  const { prev, next, index, total } = getSeriesNeighbors(comic);
+  const hasSeriesNav = Boolean(prev || next);
   const pages = Array.isArray(comic.pages) && comic.pages.length > 0 ? comic.pages : null;
   const fileUrl = (pages && pages[0]) || comic.image || comic.pdf;
   const isImage = Boolean(pages || comic.image);
@@ -35,6 +37,33 @@ export default function ComicPage({ id }) {
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <a href="#/">← The Comic Vault</a>
       </nav>
+
+      {hasSeriesNav && (
+        <nav className="series-nav" aria-label={`${comic.title} series navigation`}>
+          {prev ? (
+            <a href={`#/comic/${prev.id}`} className="series-nav-link series-nav-prev">
+              <span className="series-nav-direction">← Previous</span>
+              <span className="series-nav-issue">{prev.issue}</span>
+              <span className="series-nav-title">{prev.title}</span>
+            </a>
+          ) : (
+            <span className="series-nav-link series-nav-empty" aria-hidden="true" />
+          )}
+          <span className="series-nav-meta">
+            {comic.title}
+            {total > 1 && <small> · Issue {index + 1} of {total}</small>}
+          </span>
+          {next ? (
+            <a href={`#/comic/${next.id}`} className="series-nav-link series-nav-next">
+              <span className="series-nav-direction">Next →</span>
+              <span className="series-nav-issue">{next.issue}</span>
+              <span className="series-nav-title">{next.title}</span>
+            </a>
+          ) : (
+            <span className="series-nav-link series-nav-empty" aria-hidden="true" />
+          )}
+        </nav>
+      )}
 
       <header
         className="comic-page-hero"
@@ -125,6 +154,28 @@ export default function ComicPage({ id }) {
 
       <section className="comic-section">
         <h3 className="comic-section-title">More Comics to Read</h3>
+        {hasSeriesNav && (
+          <div className="series-nav series-nav-bottom" aria-label={`${comic.title} series navigation`}>
+            {prev ? (
+              <a href={`#/comic/${prev.id}`} className="series-nav-link series-nav-prev">
+                <span className="series-nav-direction">← Previous in series</span>
+                <span className="series-nav-issue">{prev.issue}</span>
+                <span className="series-nav-title">{prev.title}</span>
+              </a>
+            ) : (
+              <span className="series-nav-link series-nav-empty" aria-hidden="true" />
+            )}
+            {next ? (
+              <a href={`#/comic/${next.id}`} className="series-nav-link series-nav-next">
+                <span className="series-nav-direction">Next in series →</span>
+                <span className="series-nav-issue">{next.issue}</span>
+                <span className="series-nav-title">{next.title}</span>
+              </a>
+            ) : (
+              <span className="series-nav-link series-nav-empty" aria-hidden="true" />
+            )}
+          </div>
+        )}
         <div className="comics-grid">
           {related.map((c) => (
             <ComicCard key={c.id} comic={c} />

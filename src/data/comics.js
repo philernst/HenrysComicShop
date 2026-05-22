@@ -415,6 +415,28 @@ export function getSortedComics() {
   return out;
 }
 
+// Returns the issues that share a title with the given comic, sorted by issue number.
+export function getSeriesIssues(comic) {
+  if (!comic) return [];
+  return comics
+    .filter((c) => c.title === comic.title)
+    .slice()
+    .sort((a, b) => parseIssueNumber(a.issue) - parseIssueNumber(b.issue));
+}
+
+// Returns { prev, next, index, total } for navigating within a series.
+export function getSeriesNeighbors(comic) {
+  const issues = getSeriesIssues(comic);
+  if (issues.length <= 1) return { prev: null, next: null, index: 0, total: issues.length };
+  const index = issues.findIndex((c) => c.id === comic.id);
+  return {
+    prev: index > 0 ? issues[index - 1] : null,
+    next: index >= 0 && index < issues.length - 1 ? issues[index + 1] : null,
+    index,
+    total: issues.length,
+  };
+}
+
 export function getSeriesList() {
   const seen = new Set();
   const list = [];
