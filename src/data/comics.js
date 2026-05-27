@@ -20,7 +20,7 @@ const comics = [
       { name: 'The Kid', desc: 'Cave explorer. Accidental dragon parent. Big heart.' },
       { name: 'The Little Dragon', desc: 'Hatched hungry. Grows fast. Currently unsure about freedom.' },
     ],
-    creatorsNote: 'This is the origin story for the whole Dragon Series. Then check out #2 and #3! \u2014 Henry',
+    creatorsNote: 'This is the origin story for the whole Dragon Series. Then check out #2, #3, and #4! \u2014 Henry',
   },
   {
     id: 'dragon-series-2',
@@ -60,7 +60,27 @@ const comics = [
       { name: 'The Green Dragon', desc: 'Tied up at first, then freed. Very confused.' },
       { name: 'The Big Black Dragon', desc: 'Egg parent. Furious. Recently arrived.' },
     ],
-    creatorsNote: 'I wanted this one to have a twist! Issue #4 is coming soon. \u2014 Henry',
+    creatorsNote: 'I wanted this one to have a twist! Don\u2019t miss the finale in issue #4. \u2014 Henry',
+  },
+  {
+    id: 'dragon-series-4',
+    title: 'The Dragon Series',
+    issue: '#4',
+    blurb: 'The big black dragon comes for her egg \u2014 but a quick apology turns the showdown into a truce.',
+    icon: '🕊️',
+    palette: { bg: '#1565C0', accent: '#FFE135' },
+    image: '/comics/dragon-series-4.png',
+    synopsis: [
+      '"You took IIII my egg!!!!" The big black dragon corners the hero, furious. He stammers back the only honest answer he\u2019s got: "I didn\u2019t know!" Meanwhile the little green dragon is already wriggling free \u2014 "I\u2019m free now."',
+      'The black dragon swoops down with a giant "come home!" \u2014 all teeth and wings and worried-parent energy. The hero finally finds his nerve and sets a condition: "only if the people are safe."',
+      'The dragon agrees: "O.K. No fighting." Mother and child fly off together with a wave and a "good-bye!" while the hero and his friend wave back. The End \u2014 for now.',
+    ],
+    characters: [
+      { name: 'The Hero', desc: 'Negotiator. Trades a sword fight for a peace deal.' },
+      { name: 'The Big Black Dragon', desc: 'Furious mom turned reluctant peacekeeper.' },
+      { name: 'The Green Dragon', desc: 'The egg, all grown up and finally free.' },
+    ],
+    creatorsNote: 'This is the big finale of The Dragon Series \u2014 sometimes the best ending is no fight at all. \u2014 Henry',
   },
   {
     id: 'dude-and-the-nudle-bole-1',
