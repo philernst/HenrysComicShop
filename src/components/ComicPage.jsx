@@ -2,6 +2,9 @@ import { useEffect } from 'react';
 import { getComicById, getRelatedComics, getSeriesNeighbors } from '../data/comics';
 import { getSeriesInfo } from '../data/series';
 import ComicCard from './ComicCard';
+import AdSlot from './AdSlot';
+
+const COMIC_AD_SLOT = import.meta.env.VITE_ADSENSE_SLOT_COMIC;
 
 export default function ComicPage({ id }) {
   const comic = getComicById(id);
@@ -139,6 +142,8 @@ export default function ComicPage({ id }) {
           ))}
         </ul>
       </section>
+
+      <AdSlot slot={COMIC_AD_SLOT} className="ad-slot-inline" />
 
       <section className="comic-section">
         <h3 className="comic-section-title">A Note from Henry</h3>

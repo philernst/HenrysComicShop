@@ -1,3 +1,7 @@
+import AdSlot from '../components/AdSlot';
+
+const ABOUT_AD_SLOT = import.meta.env.VITE_ADSENSE_SLOT_ABOUT;
+
 export default function AboutPage() {
   return (
     <article className="legal-page">
@@ -47,6 +51,8 @@ export default function AboutPage() {
           yet.
         </p>
       </section>
+
+      <AdSlot slot={ABOUT_AD_SLOT} className="ad-slot-inline" />
 
       <section className="legal-section">
         <h3>The series so far</h3>

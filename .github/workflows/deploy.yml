@@ -35,6 +35,11 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
           VITE_RECIPIENT_EMAIL: ${{ secrets.VITE_RECIPIENT_EMAIL }}
+          VITE_ADSENSE_CLIENT_ID: ${{ secrets.VITE_ADSENSE_CLIENT_ID }}
+          VITE_ADSENSE_SLOT_COMIC: ${{ secrets.VITE_ADSENSE_SLOT_COMIC }}
+          VITE_ADSENSE_SLOT_ABOUT: ${{ secrets.VITE_ADSENSE_SLOT_ABOUT }}
+          VITE_ADSENSE_SLOT_FAQ: ${{ secrets.VITE_ADSENSE_SLOT_FAQ }}
+          VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
         run: |
           missing=()
           [ -z "$VITE_EMAILJS_SERVICE_ID" ]  && missing+=(VITE_EMAILJS_SERVICE_ID) || true
@@ -47,7 +52,12 @@ jobs:
           printf 'VITE_EMAILJS_SERVICE_ID=%s\n'  "$VITE_EMAILJS_SERVICE_ID"  >> .env
           printf 'VITE_EMAILJS_TEMPLATE_ID=%s\n' "$VITE_EMAILJS_TEMPLATE_ID" >> .env
           printf 'VITE_EMAILJS_PUBLIC_KEY=%s\n'  "$VITE_EMAILJS_PUBLIC_KEY"  >> .env
-          [ -n "$VITE_RECIPIENT_EMAIL" ] && printf 'VITE_RECIPIENT_EMAIL=%s\n' "$VITE_RECIPIENT_EMAIL" >> .env || true
+          [ -n "$VITE_RECIPIENT_EMAIL" ]    && printf 'VITE_RECIPIENT_EMAIL=%s\n'    "$VITE_RECIPIENT_EMAIL"    >> .env || true
+          [ -n "$VITE_ADSENSE_CLIENT_ID" ]  && printf 'VITE_ADSENSE_CLIENT_ID=%s\n'  "$VITE_ADSENSE_CLIENT_ID"  >> .env || true
+          [ -n "$VITE_ADSENSE_SLOT_COMIC" ] && printf 'VITE_ADSENSE_SLOT_COMIC=%s\n' "$VITE_ADSENSE_SLOT_COMIC" >> .env || true
+          [ -n "$VITE_ADSENSE_SLOT_ABOUT" ] && printf 'VITE_ADSENSE_SLOT_ABOUT=%s\n' "$VITE_ADSENSE_SLOT_ABOUT" >> .env || true
+          [ -n "$VITE_ADSENSE_SLOT_FAQ" ]   && printf 'VITE_ADSENSE_SLOT_FAQ=%s\n'   "$VITE_ADSENSE_SLOT_FAQ"   >> .env || true
+          [ -n "$VITE_GA_MEASUREMENT_ID" ]  && printf 'VITE_GA_MEASUREMENT_ID=%s\n'  "$VITE_GA_MEASUREMENT_ID"  >> .env || true
 
       - name: Install dependencies
         run: npm ci

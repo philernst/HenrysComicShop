@@ -13,6 +13,7 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Contact from './pages/Contact';
 import useHashRoute from './hooks/useHashRoute';
+import useAnalytics from './hooks/useAnalytics';
 
 function renderRoute(route) {
   switch (route.name) {
@@ -42,6 +43,7 @@ function renderRoute(route) {
 
 export default function App() {
   const route = useHashRoute();
+  useAnalytics();
 
   return (
     <>

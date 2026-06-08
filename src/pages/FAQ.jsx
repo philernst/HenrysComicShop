@@ -1,6 +1,13 @@
 import { faqs } from '../data/faqs';
+import AdSlot from '../components/AdSlot';
+
+const FAQ_AD_SLOT = import.meta.env.VITE_ADSENSE_SLOT_FAQ;
 
 export default function FAQ() {
+  const half = Math.ceil(faqs.length / 2);
+  const firstHalf = faqs.slice(0, half);
+  const secondHalf = faqs.slice(half);
+
   return (
     <article className="legal-page">
       <header className="legal-page-header">
@@ -12,7 +19,20 @@ export default function FAQ() {
 
       <section className="legal-section">
         <dl className="faq-list">
-          {faqs.map((entry) => (
+          {firstHalf.map((entry) => (
+            <div key={entry.q} className="faq-item">
+              <dt>{entry.q}</dt>
+              <dd>{entry.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <AdSlot slot={FAQ_AD_SLOT} className="ad-slot-inline" />
+
+      <section className="legal-section">
+        <dl className="faq-list">
+          {secondHalf.map((entry) => (
             <div key={entry.q} className="faq-item">
               <dt>{entry.q}</dt>
               <dd>{entry.a}</dd>
