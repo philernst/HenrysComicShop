@@ -10,7 +10,7 @@ export default function CookieConsent() {
       <div className="consent-banner-inner">
         <p className="consent-banner-text">
           We use cookies for site analytics and to show ads that keep the comics free.
-          Read our <a href="#/privacy">Privacy Policy</a> for the details.
+          Read our <a href="/privacy">Privacy Policy</a> for the details.
         </p>
         <div className="consent-banner-actions">
           <button

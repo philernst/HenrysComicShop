@@ -1,4 +1,13 @@
+import useHead from '../hooks/useHead';
+import { SITE_NAME, SITE_URL } from '../site-config';
+
 export default function Terms() {
+  useHead({
+    title: `Terms of Use \u2014 ${SITE_NAME}`,
+    description: 'Short, friendly terms for reading, sharing, and downloading the original comics on Henry\u2019s Comic Shop.',
+    canonical: SITE_URL + '/terms',
+  });
+
   return (
     <article className="legal-page">
       <header className="legal-page-header">
@@ -51,7 +60,7 @@ export default function Terms() {
         <p>
           Some pages show ads from Google AdSense. The ads help keep the comics
           free. We&apos;ve told Google to treat the site as child-directed, so the
-          ads should not be personalized. See our <a href="#/privacy">Privacy Policy</a>{' '}
+          ads should not be personalized. See our <a href="/privacy">Privacy Policy</a>{' '}
           for details.
         </p>
       </section>
@@ -59,7 +68,7 @@ export default function Terms() {
       <section className="legal-section">
         <h3>Contacting us</h3>
         <p>
-          The fastest way to reach a grown-up here is the <a href="#/contact">Contact</a>{' '}
+          The fastest way to reach a grown-up here is the <a href="/contact">Contact</a>{' '}
           page, or email <strong>henryscomicshop@gmail.com</strong>. If you&apos;re a
           kid, please get a parent or guardian to help before sending a message.
         </p>

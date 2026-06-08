@@ -1,29 +1,72 @@
-import { useEffect } from 'react';
 import { getComicById, getRelatedComics, getSeriesNeighbors } from '../data/comics';
 import { getSeriesInfo } from '../data/series';
 import ComicCard from './ComicCard';
 import AdSlot from './AdSlot';
+import useHead from '../hooks/useHead';
+import { SITE_NAME, SITE_URL, SITE_DEFAULT_IMAGE, absoluteUrl } from '../site-config';
 
 const COMIC_AD_SLOT = import.meta.env.VITE_ADSENSE_SLOT_COMIC;
+
+function buildDescription(comic) {
+  const synopsisFirst = (comic.synopsis && comic.synopsis[0]) || '';
+  const base = comic.blurb ? `${comic.blurb} ` : '';
+  const combined = (base + synopsisFirst).replace(/\s+/g, ' ').trim();
+  if (combined.length <= 240) return combined;
+  return combined.slice(0, 237).trimEnd() + '\u2026';
+}
 
 export default function ComicPage({ id }) {
   const comic = getComicById(id);
 
-  useEffect(() => {
-    if (comic) {
-      document.title = `${comic.title} ${comic.issue} · Henry's Comic Shop`;
-    }
-    return () => {
-      document.title = "Henry's Comic Shop";
-    };
-  }, [comic]);
+  const headPayload = comic
+    ? (() => {
+        const pages = Array.isArray(comic.pages) && comic.pages.length > 0 ? comic.pages : null;
+        const cover = (pages && pages[0]) || comic.image || SITE_DEFAULT_IMAGE;
+        const seriesInfo = getSeriesInfo(comic.title);
+        const description = buildDescription(comic);
+        const canonical = `${SITE_URL}/comic/${comic.id}`;
+        const jsonLd = {
+          '@context': 'https://schema.org',
+          '@type': 'ComicIssue',
+          name: `${comic.title} ${comic.issue}`,
+          headline: `${comic.title} ${comic.issue}`,
+          description,
+          url: canonical,
+          image: absoluteUrl(cover),
+          inLanguage: 'en',
+          author: { '@type': 'Person', name: 'Henry' },
+          publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL + '/' },
+          isFamilyFriendly: true,
+        };
+        if (seriesInfo) {
+          jsonLd.isPartOf = {
+            '@type': 'ComicSeries',
+            name: comic.title,
+            description: seriesInfo.blurb,
+          };
+        }
+        return {
+          title: `${comic.title} ${comic.issue} \u2014 ${SITE_NAME}`,
+          description,
+          canonical,
+          ogImage: absoluteUrl(cover),
+          jsonLd,
+        };
+      })()
+    : {
+        title: `Comic not found \u2014 ${SITE_NAME}`,
+        description: 'That comic doesn\u2019t seem to exist on Henry\u2019s Comic Shop.',
+        canonical: SITE_URL + '/404',
+      };
+
+  useHead(headPayload);
 
   if (!comic) {
     return (
       <section className="comic-page">
         <h2 className="section-title">Comic not found</h2>
         <p className="gallery-intro">That comic doesn&apos;t seem to exist. Maybe it was eaten by a moon pirate.</p>
-        <a href="#/" className="btn-main">← Back to the Vault</a>
+        <a href="/" className="btn-main">← Back to the Vault</a>
       </section>
     );
   }
@@ -46,7 +89,7 @@ export default function ComicPage({ id }) {
         >
           {prev ? (
             <a
-              href={`#/comic/${prev.id}`}
+              href={`/comic/${prev.id}`}
               className="series-nav-pill-link series-nav-pill-prev"
               aria-label={`Previous: ${prev.title} ${prev.issue}`}
             >
@@ -67,7 +110,7 @@ export default function ComicPage({ id }) {
           </span>
           {next ? (
             <a
-              href={`#/comic/${next.id}`}
+              href={`/comic/${next.id}`}
               className="series-nav-pill-link series-nav-pill-next"
               aria-label={`Next: ${next.title} ${next.issue}`}
             >
@@ -119,13 +162,13 @@ export default function ComicPage({ id }) {
 
       {seriesInfo && (
         <section className="comic-section series-intro">
-          <h3 className="comic-section-title">About the {comic.title} series</h3>
+          <h3 className="comic-section-title">About {comic.title}</h3>
           <p className="comic-paragraph">{seriesInfo.blurb}</p>
           {total > 1 && (
             <p className="comic-paragraph series-intro-meta">
               You&apos;re reading issue {index + 1} of {total}. Use the prev/next
               pill at the top to flip between issues, or jump back to{' '}
-              <a href="#/">the full vault</a> to pick a different series.
+              <a href="/">the full vault</a> to pick a different series.
             </p>
           )}
         </section>
@@ -200,7 +243,7 @@ export default function ComicPage({ id }) {
         {hasSeriesNav && (
           <div className="series-nav series-nav-bottom" aria-label={`${comic.title} series navigation`}>
             {prev ? (
-              <a href={`#/comic/${prev.id}`} className="series-nav-link series-nav-prev">
+              <a href={`/comic/${prev.id}`} className="series-nav-link series-nav-prev">
                 <span className="series-nav-direction">← Previous in series</span>
                 <span className="series-nav-issue">{prev.issue}</span>
                 <span className="series-nav-title">{prev.title}</span>
@@ -209,7 +252,7 @@ export default function ComicPage({ id }) {
               <span className="series-nav-link series-nav-empty" aria-hidden="true" />
             )}
             {next ? (
-              <a href={`#/comic/${next.id}`} className="series-nav-link series-nav-next">
+              <a href={`/comic/${next.id}`} className="series-nav-link series-nav-next">
                 <span className="series-nav-direction">Next in series →</span>
                 <span className="series-nav-issue">{next.issue}</span>
                 <span className="series-nav-title">{next.title}</span>
@@ -225,7 +268,7 @@ export default function ComicPage({ id }) {
           ))}
         </div>
         <p style={{ marginTop: '1rem' }}>
-          <a href="#/" className="btn-main">📚 Browse All Comics</a>
+          <a href="/" className="btn-main">📚 Browse All Comics</a>
         </p>
       </section>
     </article>

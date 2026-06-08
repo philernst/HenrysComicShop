@@ -1,4 +1,13 @@
+import useHead from '../hooks/useHead';
+import { SITE_NAME, SITE_URL } from '../site-config';
+
 export default function Privacy() {
+  useHead({
+    title: `Privacy Policy \u2014 ${SITE_NAME}`,
+    description: 'How Henry\u2019s Comic Shop handles analytics, ads, the contact form, and cookies \u2014 written in plain language for kids and parents.',
+    canonical: SITE_URL + '/privacy',
+  });
+
   return (
     <article className="legal-page">
       <header className="legal-page-header">
@@ -91,7 +100,7 @@ export default function Privacy() {
         <h3>Questions?</h3>
         <p>
           Email <strong>henryscomicshop@gmail.com</strong> or use the{' '}
-          <a href="#/contact">Contact</a> page. A grown-up reads every message.
+          <a href="/contact">Contact</a> page. A grown-up reads every message.
         </p>
       </section>
     </article>

@@ -1,5 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import useHead from '../hooks/useHead';
+import { SITE_NAME, SITE_URL } from '../site-config';
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -46,6 +48,12 @@ function isValidEmail(value) {
 }
 
 export default function Contact() {
+  useHead({
+    title: `Contact \u2014 ${SITE_NAME}`,
+    description: 'Send a message to Henry\u2019s Comic Shop \u2014 fan mail, comic requests, and questions are read by a grown-up first.',
+    canonical: SITE_URL + '/contact',
+  });
+
   const formRef = useRef(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -236,7 +244,7 @@ export default function Contact() {
           Your name, email, and message are sent through{' '}
           <a href="https://www.emailjs.com/" rel="noopener noreferrer" target="_blank">EmailJS</a>{' '}
           to Henry&apos;s parents&apos; inbox. We only use it to email you back. See the{' '}
-          <a href="#/privacy">Privacy Policy</a> for the full story.
+          <a href="/privacy">Privacy Policy</a> for the full story.
         </p>
       </section>
     </article>

@@ -1,8 +1,17 @@
 import AdSlot from '../components/AdSlot';
+import useHead from '../hooks/useHead';
+import { SITE_NAME, SITE_URL, absoluteUrl, SITE_DEFAULT_IMAGE } from '../site-config';
 
 const ABOUT_AD_SLOT = import.meta.env.VITE_ADSENSE_SLOT_ABOUT;
 
 export default function AboutPage() {
+  useHead({
+    title: `About \u2014 ${SITE_NAME}`,
+    description: 'Meet Henry, an 8-year-old comic artist, and learn how every comic on the shop is made — from sticky-note idea to scanned page.',
+    canonical: SITE_URL + '/about',
+    ogImage: absoluteUrl(SITE_DEFAULT_IMAGE),
+  });
+
   return (
     <article className="legal-page">
       <header className="legal-page-header">
@@ -103,7 +112,7 @@ export default function AboutPage() {
         <h3>Get in touch</h3>
         <p>
           Have a question, fan art, or an idea for a future comic? Use the{' '}
-          <a href="#/contact">Contact</a> page or email{' '}
+          <a href="/contact">Contact</a> page or email{' '}
           <strong>henryscomicshop@gmail.com</strong>. A grown-up reads everything
           before Henry sees it.
         </p>

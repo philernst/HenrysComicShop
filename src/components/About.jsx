@@ -17,8 +17,8 @@ export default function About() {
           <p>
             Every comic on this site is free &mdash; I just want as many people as
             possible to read them. If you like them, you can{' '}
-            <a href="#/contact">send me a message</a> or check out the{' '}
-            <a href="#/about">longer About page</a> to read about how a comic gets
+            <a href="/contact">send me a message</a> or check out the{' '}
+            <a href="/about">longer About page</a> to read about how a comic gets
             made.
           </p>
           <div className="speech-bubble">
