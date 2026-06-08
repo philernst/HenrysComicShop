@@ -3,7 +3,7 @@ export default function ComicCard({ comic }) {
 
   return (
     <a
-      href={`#/comic/${id}`}
+      href={`/comic/${id}`}
       className="comic-card"
       style={{ '--card-bg': palette.bg, '--card-accent': palette.accent }}
     >
