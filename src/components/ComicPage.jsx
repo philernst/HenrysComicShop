@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { getComicById, getRelatedComics, getSeriesNeighbors } from '../data/comics';
+import { getSeriesInfo } from '../data/series';
 import ComicCard from './ComicCard';
 
 export default function ComicPage({ id }) {
@@ -27,6 +28,7 @@ export default function ComicPage({ id }) {
   const related = getRelatedComics(comic.id, 3);
   const { prev, next, index, total } = getSeriesNeighbors(comic);
   const hasSeriesNav = Boolean(prev || next);
+  const seriesInfo = getSeriesInfo(comic.title);
   const pages = Array.isArray(comic.pages) && comic.pages.length > 0 ? comic.pages : null;
   const fileUrl = (pages && pages[0]) || comic.image || comic.pdf;
   const isImage = Boolean(pages || comic.image);
@@ -111,6 +113,20 @@ export default function ComicPage({ id }) {
           <p key={i} className="comic-paragraph">{para}</p>
         ))}
       </section>
+
+      {seriesInfo && (
+        <section className="comic-section series-intro">
+          <h3 className="comic-section-title">About the {comic.title} series</h3>
+          <p className="comic-paragraph">{seriesInfo.blurb}</p>
+          {total > 1 && (
+            <p className="comic-paragraph series-intro-meta">
+              You&apos;re reading issue {index + 1} of {total}. Use the prev/next
+              pill at the top to flip between issues, or jump back to{' '}
+              <a href="#/">the full vault</a> to pick a different series.
+            </p>
+          )}
+        </section>
+      )}
 
       <section className="comic-section">
         <h3 className="comic-section-title">Meet the Cast</h3>

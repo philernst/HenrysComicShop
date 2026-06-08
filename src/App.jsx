@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
+import Latest from './components/Latest';
 import ComicsGallery from './components/ComicsGallery';
 import ComicPage from './components/ComicPage';
 import About from './components/About';
@@ -31,6 +32,7 @@ function renderRoute(route) {
       return (
         <>
           <Hero />
+          <Latest />
           <ComicsGallery />
           <About />
         </>
