@@ -1,4 +1,3 @@
-import Hero from '../components/Hero';
 import Latest from '../components/Latest';
 import ComicsGallery from '../components/ComicsGallery';
 import About from '../components/About';
@@ -22,7 +21,6 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
       <Latest />
       <ComicsGallery />
       <About />
