@@ -17,11 +17,8 @@ export default function Latest() {
       </p>
       <ul className="latest-list">
         {recent.map((comic) => (
-          <li key={comic.id} className="latest-item">
+          <li key={comic.id}>
             <ComicCard comic={comic} />
-            <div className="latest-meta">
-              <h3>{comic.title} {comic.issue}</h3>
-            </div>
           </li>
         ))}
       </ul>
