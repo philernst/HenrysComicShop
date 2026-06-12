@@ -16,18 +16,14 @@ export default function Latest() {
         read the issue, meet the cast, and find out where it fits in.
       </p>
       <ul className="latest-list">
-        {recent.map((comic) => {
-          const shortBlurb = comic.blurb.split(/[.!?]/)[0]?.trim();
-          return (
-            <li key={comic.id} className="latest-item">
-              <ComicCard comic={comic} />
-              <div className="latest-meta">
-                <h3>{comic.title} {comic.issue}</h3>
-                <p>{shortBlurb ? `${shortBlurb}.` : 'Tap to read this issue.'}</p>
-              </div>
-            </li>
-          );
-        })}
+        {recent.map((comic) => (
+          <li key={comic.id} className="latest-item">
+            <ComicCard comic={comic} />
+            <div className="latest-meta">
+              <h3>{comic.title} {comic.issue}</h3>
+            </div>
+          </li>
+        ))}
       </ul>
     </section>
   );
